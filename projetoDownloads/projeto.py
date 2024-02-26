@@ -45,7 +45,7 @@ def main():
             cod = int(input("Digite o código do download: "))
             nome = input("Nome do download: ").capitalize()
             tamanho = input("Tamanho do download: ").capitalize()
-            tipo_arq = (input("Tipo do arquivo: ")).lower()
+            tipo_arq = (input("Tipo do arquivo: ")).capitalize()
             novo_download = {cod : {"nome": nome, "tamanho": tamanho, "tipo_arq": tipo_arq}}
             adc_download(downloads, novo_download)
             salvar_arq(downloads, arquivo_downloads)
@@ -60,7 +60,7 @@ def main():
                 novo_cod = str(input("Digite qual código do download: "))
             novo_nome = input("Novo nome do download: ").capitalize()
             novo_tamanho = input("Novo tamanho do download: ").capitalize()
-            novo_tipo_arq = (input("Novo tipo do arquivo: ")).lower()
+            novo_tipo_arq = (input("Novo tipo do arquivo: ")).capitalize()
             downloads[novo_cod] = {'nome': novo_nome, 'tamanho': novo_tamanho, 'tipo_arq': novo_tipo_arq}
             downloads.update(downloads)
             salvar_arq(downloads, arquivo_downloads)
