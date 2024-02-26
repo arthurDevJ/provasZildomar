@@ -12,8 +12,10 @@ def separa_positivos_negativos(lista):
             negativos.append(numero)
     return positivos, negativos
 
-# Exemplo de uso:
-numeros = [1, -2, 3, -4, 5, -6]
-positivos, negativos = separa_positivos_negativos(numeros)
-print("Números positivos:", positivos)
-print("Números negativos:", negativos)
+def main():
+    numeros = [1, -2, 3, -4, 5, -6]
+    positivos, negativos = separa_positivos_negativos(numeros)
+    print("Números positivos:", positivos)
+    print("Números negativos:", negativos)
+
+main()

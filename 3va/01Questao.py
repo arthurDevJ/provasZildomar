@@ -3,8 +3,6 @@ dados lista) como parâmetro e retorna duas novas listas, uma contendo os alunos
 com os reprovados. Além disso, a função calcula e exibe uma mensagem informando quantos alunos
 possui idade superior 22 anos.'''
 
-
-
 def separar_alunos(lista_alunos):
     alunos_aprovados = []
     alunos_reprovados = []

@@ -14,7 +14,7 @@ def cadastrar_livro(lista_livros):
     lista_livros.append([codigo, produto, area, valor])
     print("Livro cadastrado com sucesso!")
 
-def mostrar_livros_por_area(lista_livros, area_desejada):
+def livrosPorArea(lista_livros, area_desejada):
     livros_encontrados = [livro for livro in lista_livros if livro[2] == area_desejada]
     if livros_encontrados:
         print(f"Livros da área de {area_desejada}:")
@@ -43,7 +43,7 @@ while True:
         cadastrar_livro(biblioteca_pessoal)
     elif opcao == 2:
         area_desejada = input("Digite a área desejada: ")
-        mostrar_livros_por_area(biblioteca_pessoal, area_desejada)
+        livrosPorArea(biblioteca_pessoal, area_desejada)
     elif opcao == 3:
         calcular_total_gasto(biblioteca_pessoal)
     elif opcao == 4:

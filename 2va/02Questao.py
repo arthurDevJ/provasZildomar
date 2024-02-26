@@ -8,8 +8,8 @@ III. Calcular total: O programa a calcula o valor total dos produtos em estoque(
 def cadastrar_produto():
     nome = input("Digite o nome do produto: ")
     preco = float(input("Digite o preço do produto: "))
-    quantidade = int(input("Digite a quantidade em estoque: "))
-    return [nome, preco, quantidade]
+    quant = int(input("Digite a quantidade em estoque: "))
+    return [nome, preco, quant]
 
 def exibir_produtos(baseProdutos):
     print("Lista de Produtos:")
@@ -25,22 +25,22 @@ def calcular_total(baseProdutos):
 baseProdutos = []
 
 while True:
-    print("\n1. Cadastrar produto")
-    print("2. Exibir produtos")
+    print("\n1. Cadastrar produto\n2. Exibir produtos\n3. Calcular total\n4. Sair")
+    '''print("2. Exibir produtos")
     print("3. Calcular total")
-    print("4. Sair")
+    print("4. Sair")'''
 
-    opcao = int(input("Escolha uma opção: "))
+    op = int(input("Escolha uma opção: "))
 
-    if opcao == 1:
+    if op == 1:
         produto = cadastrar_produto()
         baseProdutos.append(produto)
         print("Produto cadastrado com sucesso!")
-    elif opcao == 2:
+    elif op == 2:
         exibir_produtos(baseProdutos)
-    elif opcao == 3:
+    elif op == 3:
         calcular_total(baseProdutos)
-    elif opcao == 4:
+    elif op == 4:
         print("Saindo do programa...")
         break
     else:
