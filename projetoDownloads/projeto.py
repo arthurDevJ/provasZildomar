@@ -52,13 +52,18 @@ def main():
             print("Download adicionado com sucesso.")
         elif op == 2:
             for i in downloads:
-                print(f'Nome: {downloads[i]["nome"]}, Tamanho: {downloads[i]["tamanho"]}, Tipo arquivo {downloads[i]["tipo_arq"]}')
+                print(f'Cod: {i}, Nome: {downloads[i]["nome"]}, Tamanho: {downloads[i]["tamanho"]}, Tipo arquivo {downloads[i]["tipo_arq"]}')
         elif op == 3:
             novo_cod = str(input("Digite qual código do download: "))
+            while novo_cod not in downloads:
+                print("Código não encontrado!")
+                novo_cod = str(input("Digite qual código do download: "))
             novo_nome = input("Novo nome do download: ").capitalize()
             novo_tamanho = input("Novo tamanho do download: ").capitalize()
             novo_tipo_arq = (input("Novo tipo do arquivo: ")).lower()
             downloads[novo_cod] = {'nome': novo_nome, 'tamanho': novo_tamanho, 'tipo_arq': novo_tipo_arq}
+            downloads.update(downloads)
+            salvar_arq(downloads, arquivo_downloads)
         elif op == 4:
             num_esc = str(input("Número do download escolhido para remoção: "))
             excluir_download(downloads, num_esc)
