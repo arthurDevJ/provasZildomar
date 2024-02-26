@@ -11,20 +11,20 @@ def carregar_arq(nome_arquivo):
     except FileNotFoundError:
         return {}
 
-def salvar_arq(lista, nome_arquivo):
+def salvar_arq(dicionario, nome_arquivo):
     with open(nome_arquivo, 'w') as arquivo:
-        json.dump(lista, arquivo, indent = 4)
+        json.dump(dicionario, arquivo, indent = 4)
 
-def adc_download(lista, donwload):
-    lista.update(donwload)
+def adc_download(dicionario, donwload):
+    dicionario.update(donwload)
 
-def excluir_download(lista, num_esc):
-    if num_esc in lista:
-        lista.pop(num_esc)
+def excluir_download(dicionario, num_esc):
+    if num_esc in dicionario:
+        dicionario.pop(num_esc)
         print("Removido com sucesso! ")
     else:
         print("\nINFORMAÇÃO NÃO ENCONTRADA ")
-        return lista
+        return dicionario
 
 def main():
     arquivo_downloads = "downloads.json"
@@ -61,8 +61,11 @@ def main():
             downloads[novo_cod] = {'nome': novo_nome, 'tamanho': novo_tamanho, 'tipo_arq': novo_tipo_arq}
         elif op == 4:
             num_esc = str(input("Número do download escolhido para remoção: "))
-            a = excluir_download(downloads, num_esc)
-            downloads.update(a)
+            excluir_download(downloads, num_esc)
             salvar_arq(downloads, arquivo_downloads)
-
+        else:
+            downloads.update(downloads)
+            salvar_arq(downloads, arquivo_downloads)
+            print("Saindo...")
+            break
 main()
